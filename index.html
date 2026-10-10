@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Calculus in Signal Processing: A1 poster by C234, C235, C270, BTech Computer Engineering Div D, MPSTME NMIMS.">
+<title>Calculus in Signal Processing</title>
+<style>
+/* Layout: one reading column; the poster is the page, notes sit beside it on wide screens */
+:root{
+  --bg:#ffffff; --fg:#1b2533; --muted:#5a6676; --line:#d6ede2; --accent:#1f3a5f; --chip:#eef6f2;
+  --font:"Arial","Liberation Sans",Helvetica,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121821;--fg:#e6ebf1;--muted:#9aa6b4;--line:#2c4a3d;--accent:#9cc3ea;--chip:#1b2a24;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121821;--fg:#e6ebf1;--muted:#9aa6b4;--line:#2c4a3d;--accent:#9cc3ea;--chip:#1b2a24;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:28px 48px}
+header{border-bottom:4px solid var(--line);padding-bottom:16px;margin-bottom:24px}
+h1{font-size:clamp(1.5rem,3.4vw,2.4rem);line-height:1.2;margin:0 0 10px;text-wrap:balance}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;color:var(--muted);font-size:.95rem}
+.meta b{color:var(--fg);font-weight:600}
+.grid{display:grid;grid-template-columns:minmax(0,1fr);gap:28px}
+@media (min-width:900px){.grid{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)}}
+figure{margin:0}
+.poster{display:block;border:1px solid var(--line);background:#fff}
+.poster img{display:block;width:100%;height:auto}
+figcaption{color:var(--muted);font-size:.9rem;margin-top:8px}
+figcaption a{color:var(--accent)}
+aside{display:flex;flex-direction:column;gap:22px;min-width:0}
+h2{font-size:1.1rem;margin:0 0 6px}
+p{margin:0;max-width:65ch}
+ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
+.eq{font-variant-numeric:tabular-nums;background:var(--chip);padding:2px 6px;border-radius:4px;white-space:nowrap}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <h1>Calculus in Signal Processing: Understanding and Analyzing Signals</h1>
+    <div class="meta">
+      <span><b>Team:</b> C234 Shreyas Kamath · C235 Aron Kanjiraparambil · C270 Sonpal Krishiv</span>
+      <span><b>Course:</b> BTech Computer Engineering, Div D · Calculus</span>
+      <span><b>Mentor:</b> Dr. Minirani S</span>
+      <span>Mukesh Patel School of Technology Management &amp; Engineering, SVKM's NMIMS</span>
+    </div>
+  </header>
+
+  <div class="grid">
+    <figure>
+      <a class="poster" href="poster.jpg" target="_blank" rel="noopener"><img src="poster.jpg" alt="A1 poster: Calculus in Signal Processing, with sections on the derivative, integral, Fourier series and an RC filter, and six graphs." width="2573" height="3643"></a>
+      <figcaption>A1 poster (594 × 841 mm). <a href="poster.jpg" target="_blank" rel="noopener">Open full size</a> · <a href="poster.pdf" download>Download PDF</a></figcaption>
+    </figure>
+
+    <aside>
+      <section>
+        <h2>The idea</h2>
+        <p>Every signal is a function of time. Calculus gives the tools to read it: the derivative shows how fast it changes, the integral measures how much has built up, and Fourier analysis splits it into frequencies.</p>
+      </section>
+      <section>
+        <h2>Key tools</h2>
+        <ul>
+          <li>Derivative <span class="eq">dx/dt</span> finds slopes and sharp edges</li>
+          <li>Energy <span class="eq">E = ∫|x(t)|² dt</span> is an area under a curve</li>
+          <li>Fourier series weights <span class="eq">aₙ = (2/T)∫x(t)cos(nω₀t)dt</span></li>
+          <li>Convolution <span class="eq">y(t) = ∫x(τ)h(t−τ)dτ</span> describes filters</li>
+          <li>Laplace turns <span class="eq">d/dt</span> into <span class="eq">s</span>, so circuits become algebra</li>
+        </ul>
+      </section>
+      <section>
+        <h2>What we showed</h2>
+        <ul>
+          <li>A square wave rebuilt from 25 sine terms, with the 9% Gibbs overshoot at each jump</li>
+          <li>FFT peaks at 5, 15, 25 Hz matching the theory <span class="eq">4/(nπ)</span></li>
+          <li>An RC low-pass filter, <span class="eq">RC dy/dt + y = x</span> with a 12 Hz cutoff, removing noise from a 3 Hz sine</li>
+        </ul>
+      </section>
+      <section>
+        <h2>References</h2>
+        <ul>
+          <li>A. V. Oppenheim, A. S. Willsky, <i>Signals and Systems</i>, 2nd ed., Pearson, 1997.</li>
+          <li>G. Strang, <i>Calculus</i>, 3rd ed., Wellesley-Cambridge Press, 2017.</li>
+          <li>S. W. Smith, <i>The Scientist and Engineer's Guide to Digital Signal Processing</i>, 1997.</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</div>
+</body>
+</html>
